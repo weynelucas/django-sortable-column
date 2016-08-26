@@ -11,8 +11,8 @@ INSTALLED_APPS = [
 ```
 
 Additionally, include the following snippet at the top of any template that makes use of
-the pagination tags:
+the sortable column tags:
 
 ```python
-{% load bootstrap_pagination %}
+{% load sortable_column %}
 ```
