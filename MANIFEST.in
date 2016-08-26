@@ -1,0 +1,4 @@
+include LICENSE
+include README.rst
+recursive-include sortable_column/static *
+recursive-include sortable_column/templates *
