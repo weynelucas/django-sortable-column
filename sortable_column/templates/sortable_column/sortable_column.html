@@ -1,3 +1,21 @@
-<th class="sortable">
-    <a href="{{ path }}"><i class="fa fa-sort{{ sort_icon_suffix }}"></i> {{ title }}</a>
+<th class="{{ class_name }}" {% if style %}style="{{ style }}"{% endif %}>
+    <a href="{{ path }}">
+        {% if icon_placement == 'left' %}
+        {% if is_image %}
+        <img src="{{ icon }}"/>
+        {% else %}
+        <i class="{{ icon }}"></i>
+        {% endif %}
+        {% endif %}
+
+        {{ title }}
+
+        {% if icon_placement == 'rigth' %}
+        {% if is_image %}
+        <img src="{{ icon }}"/>
+        {% else %}
+        <i class="{{ icon }}"></i>
+        {% endif %}
+        {% endif %}
+    </a>
 </th>
