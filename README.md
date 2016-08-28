@@ -52,7 +52,7 @@ the following results for the code snippet above are:
 * `default_order` (optional) - default order for the property; choose between 'asc' (default if not provided) and 'desc'
 * `style` (optional) - the sytle attribute of rendered html tag
 
-##Settings configuration
+##Configuration Settings
 Is possible configure the sortable columns properties on your settings file (`settings.py`) adding a dictionary `SORTABLE_COLUMN_SETTINGS` like this:
 
 ```python
