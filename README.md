@@ -39,7 +39,7 @@ The following results for the code snippet above are:
 </th>
 
 <th class="sortable">
-    <a href="/your/path?order=asc;sort=publication_date">
+    <a href="/your/path?order=desc;sort=publication_date">
         Publication Date
     </a>
 </th>
