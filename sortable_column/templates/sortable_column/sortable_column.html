@@ -1,5 +1,5 @@
 <th class="{{ class_name }}" {% if style %}style="{{ style }}"{% endif %}>
-    <a href="{{ path }}">
+    <a href="{{ path | safe }}">
         {% if icon_placement == 'left' %}
         {% if is_image %}
         <img src="{{ icon }}"/>
