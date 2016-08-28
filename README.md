@@ -1,3 +1,6 @@
+[![PyPi version](https://img.shields.io/pypi/v/django-sortable-column.svg)](https://pypi.python.org/pypi/django-sortable-column)
+[![PyPi downloads](https://img.shields.io/pypi/dm/django-sortable-column.svg)](https://pypi.python.org/pypi/django-sortable-column)
+
 # Django Sortable Column
 A simple Django templatetag to renders a sortable column to support sorting in tables
 #Installation
