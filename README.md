@@ -82,7 +82,7 @@ or a path to image in your static files
 'icon-desc': STATIC_URL + 'images/sort-desc.png'
 ```
 
-To the `SORTABLE_COLUMNS_SETTINGS` configured like at the begining of this topic, the code snippet 
+To the `SORTABLE_COLUMN_SETTINGS` configured like at the begining of this topic, the code snippet 
 ```html
 {% sortable_column request=request property="title" title="Title" %}
 ```
