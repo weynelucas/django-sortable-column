@@ -24,7 +24,7 @@ the sortable column tags:
 {% sortable_column request=request property="publication_date" title="Publication Date" default_order="desc" %}
 ```
 
-The following results for the code snippet above are:
+the following results for the code snippet above are:
 ```html
 <th class="sortable">
     <a href="/your/path?myaction?order=asc;sort=title">
