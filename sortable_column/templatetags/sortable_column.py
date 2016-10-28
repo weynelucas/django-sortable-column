@@ -24,28 +24,36 @@ def sortable_column(property, title, request, style=None, default_order='asc'):
     else:
         order = 'asc'
 
+    # Config icon by order
     sort = params.get('sort')
-    sort_icon_suffix = ''
+    sort_suffix = ''
     if sort == property:
         order =  params.get('order', 'asc')
         if order not in orders:
             order = default_order
-        sort_icon_suffix = '-'  + order
+        sort_suffix = '_' + order
         order = orders[(orders.index(order)+1)%len(orders)]
 
-    icon = conf['icon' + sort_icon_suffix]
+    icon = conf['icon' + sort_suffix]
     is_image = icon.endswith(tuple(['.jpg', '.png', '.gif', '.bmp']))
 
+    # Config sort url path
     path = append_params(cleaned_path, {'sort':property, 'order':order})
+
+    # Config class name
+    class_name = conf['class_name']
+    if conf['conf_by_css']:
+        class_name += sort_suffix
 
     context = {
         'title': title,
-        'class_name': conf['class-name'],
-        'icon': conf['icon' + sort_icon_suffix],
+        'class_name': class_name,
+        'icon': conf['icon' + sort_suffix],
         'is_image': is_image,
-        'icon_placement': conf['icon-placement'],
+        'icon_placement': conf['icon_placement'],
         'style': style,
         'path': path,
+        'conf_by_css': conf['conf_by_css']
     }
 
     return context
@@ -70,14 +78,15 @@ def __get_settings():
 
 def __get_default_settings():
     return {
-        'class-name': 'sortable',
+        'class_name': 'sortable',
         'icon': '',
-        'icon-asc':'',
-        'icon-desc':'',
-        'icon-placement': 'left',
+        'icon_asc':'',
+        'icon_desc':'',
+        'icon_placement': 'left',
+        'conf_by_css': True,
     }
 
 def __get_settings_options():
     return {
-        'icon-placement': ['left', 'rigth'],
+        'icon_placement': ['left', 'rigth'],
     }

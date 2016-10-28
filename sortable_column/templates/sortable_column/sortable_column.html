@@ -1,21 +1,25 @@
 <th class="{{ class_name }}" {% if style %}style="{{ style }}"{% endif %}>
     <a href="{{ path | safe }}">
-        {% if icon_placement == 'left' %}
-        {% if is_image %}
-        <img src="{{ icon }}"/>
-        {% else %}
-        <i class="{{ icon }}"></i>
-        {% endif %}
-        {% endif %}
+        {% if not conf_by_css %}
+            {% if icon_placement == 'left' %}
+                {% if is_image %}
+                <img src="{{ icon }}"/>
+                {% else %}
+                <i class="{{ icon }}"></i>
+                {% endif %}
+            {% endif %}
 
-        {{ title }}
+            {{ title }}
 
-        {% if icon_placement == 'rigth' %}
-        {% if is_image %}
-        <img src="{{ icon }}"/>
+            {% if icon_placement == 'rigth' %}
+                {% if is_image %}
+                <img src="{{ icon }}"/>
+                {% else %}
+                <i class="{{ icon }}"></i>
+                {% endif %}
+            {% endif %}
         {% else %}
-        <i class="{{ icon }}"></i>
-        {% endif %}
+            {{ title }}
         {% endif %}
     </a>
 </th>
