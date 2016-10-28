@@ -66,21 +66,23 @@ Is possible configure the sortable columns properties on your settings file (`se
 
 ```python
 SORTABLE_COLUMN_SETTINGS = {
-  'class-name': 'sortable',
+  'class_name': 'sortable',
   'icon': 'fa fa-sort',
-  'icon-asc':'fa fa-sort-asc',
-  'icon-desc':'fa fa-sort-desc',
-  'icon-placement': 'left',
+  'icon_asc':'fa fa-sort-asc',
+  'icon_desc':'fa fa-sort-desc',
+  'icon_placement': 'left',
+  'conf_by_css': False,
 }
 ```
 
 the attributes of settings (all optionals) are:
 
-* `class-name`: the class name of th tag rendered by template tag ('sortable' if not provided)
+* `class_name`: the class name of th tag rendered by template tag ('sortable' if not provided)
 * `icon`: name of icon to represent the default sort (empty string if not provided)
-* `icon-asc`: name of icon to represent the asc sort  (empty string if not provided)
-* `icon-desc`: name of icon to represent the desc sort  (empty string if not provided)
-* `icon-placement`: placement of the icon in relation to the tile caption; choose between 'left' (default if not provided) or 'rigth'
+* `icon_asc`: name of icon to represent the asc sort  (empty string if not provided)
+* `icon_desc`: name of icon to represent the desc sort  (empty string if not provided)
+* `icon_placement`: placement of the icon in relation to the tile caption; choose between 'left' (default if not provided) or 'rigth'
+* `conf_by_css`: boolean to determine if configurations (icon contents) are made by css (False if not provided)
 
 the attributes `icon`, `icon-asc` and `icon-desc` can be a class name of empty elements like in glyphicons from [Bootstrap](http://getbootstrap.com/components/#glyphicons) or icons from [Font Awesome](http://fontawesome.io/icons/) toolkit (remember to add these libraries on your pages if you want to render its related icons)
 ```python
@@ -104,3 +106,14 @@ will produce
     </a>
 </th>
 ```
+### Configuration by CSS
+If you not want made the changes on sortable columns given the icons names or paths, you can configure using the css classes just setting the `conf_by_css` to `True`.
+
+```python
+SORTABLE_COLUMN_SETTINGS = {
+  'class_name': 'sortable',
+  'conf_by_css': True,
+}
+```
+
+Using this settings above, the th tags will use the css classes `sortable`, `sortable_asc` and `sortable_desc` that can be configured on your CSS file.
