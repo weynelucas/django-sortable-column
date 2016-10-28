@@ -1,5 +1,14 @@
+[![PyPi version](https://img.shields.io/pypi/v/django-sortable-column.svg)](https://pypi.python.org/pypi/django-sortable-column)
+[![PyPi downloads](https://img.shields.io/pypi/dm/django-sortable-column.svg)](https://pypi.python.org/pypi/django-sortable-column)
+
 # Django Sortable Column
 A simple Django templatetag to renders a sortable column to support sorting in tables
+#Installation
+## PIP
+This will install the latest stable release from PyPi.
+```
+pip install django-sortable-column
+```
 # Usage
 ## Setup
 Add `sortable_column` to your `INSTALLED_APPS` setting like this:
@@ -86,7 +95,7 @@ To the `SORTABLE_COLUMN_SETTINGS` configured like at the begining of this topic,
 ```html
 {% sortable_column request=request property="title" title="Title" %}
 ```
-will result in
+will produce
 ```html
 <th class="sortable">
     <a href="/your/path?order=asc;sort=title">
